@@ -12,6 +12,6 @@ window.config = {
   ],
   github: {
     user: 'kenese-party',
-    repo: 'kenese-party.github.io'
+    repo: 'blog'
   }
 }
