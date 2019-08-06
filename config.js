@@ -1,12 +1,9 @@
 window.config = {
   server: 'https://api.github.com',
-  siteName: 'Eyas Liu',
+  siteName: 'Kenese Party',
   navbar: [
     {
       label: '首页',
-      link: '/'
-    }, {
-      label: '博客',
       link: '/blog'
     }
   ],

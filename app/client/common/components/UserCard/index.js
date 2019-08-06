@@ -16,9 +16,9 @@ const UserCard = props => (
 )
 
 UserCard.defaultProps = {
-  name: 'Eyas Liu',
+  name: 'Kenese Party',
   text: '',
-  avatar: require('./default.jpg')
+  avatar: require('./avatar.png')
 }
 
 export default UserCard;

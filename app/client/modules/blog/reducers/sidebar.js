@@ -5,15 +5,15 @@ const initState = {
       name: 'latest_post',
       show: true,
       title: '最近更新',
-      subtitle: 'Last Update',
+      subtitle: '查看最新的文章内容',
       type: 'list',
       content: []
     }, {
       id: 2,
       name: 'tags',
       show: true,
-      title: '标签云',
-      subtitle: 'Tags Cloud',
+      title: '标签',
+      subtitle: '通过标签来筛选站点信息',
       type: 'tags',
       content: []
     }, {
@@ -21,7 +21,7 @@ const initState = {
       name: "introduct",
       show: true,
       title: '简介',
-      subtitle: 'Intructor',
+      subtitle: '',
       type: 'text',
       content: `网址数据来源于 
         <a href="http://github.com/${config.github.user}" class="button-block"><i class="fa fa-github"></i> Github 主页</a>
