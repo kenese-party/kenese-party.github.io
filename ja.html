@@ -6,7 +6,10 @@
         type: "redirect",
         name: "tester",
         scope: { read: true, write: true, account: true},
-        redirect_url: "https://kenese-party.github.io"
+        redirect_url: "https://kenese-party.github.io",
+        success(dat) {
+            console.log(dat)
+        }
     })
     var b = window.Trello.get("boards/zqJHbNrr/cards");
     b.done(function(dat) {
