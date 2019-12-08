@@ -13,8 +13,15 @@
             var b = Trello.get("boards/zqJHbNrr/cards");
             b.done(function(dat) {
                 console.log(dat);
+                try{
                 var a = Trello.post("cards/"+dat[0].id+"/actions/comments?text=一条自动生成的新的评论&token="+Trello.token());
-                console.log(a);
+                }
+                catch(e){
+                    console.log("error: ", e)
+                }
+                finally{
+                    console.log(a);
+                }
                 a.fail(function(datcard){
                     console.log(a);
                 });
