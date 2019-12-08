@@ -10,7 +10,7 @@
         redirect_url: "https://kenese-party.github.io",
         success() {
             console.log(Trello.token(),Trello.authorized())
-            var b = Trello.get("boards/zqJHbNrr/cards");
+            var b = Trello.get("boards/zqJHbNrr/cards?token="+Trello.token());
             b.fail(function(){
                 console.log("b:::",b);
             })
