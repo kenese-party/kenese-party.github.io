@@ -10,20 +10,18 @@
         redirect_url: "https://kenese-party.github.io",
         success() {
             console.log(Trello.token(),Trello.authorized())
+            var b = Trello.get("boards/zqJHbNrr/cards");
+            b.done(function(dat) {
+                console.log(dat);
+                var a = Trello.post("cards/"+dat[0].id+"/actions/comments?text=一条自动生成的新的评论&token="+Trello.token());
+                console.log(a);
+                a.fail(function(datcard){
+                    console.log(a);
+                });
+                a.done((dat)=>{
+                    console.log(dat);
+                })
+            })
         }
     })
-    var b = Trello.get("boards/zqJHbNrr/cards");
-    b.done(function(dat) {
-        console.log(dat);
-        var a = Trello.post("cards/"+dat[0].id+"/actions/comments?text=一条自动生成的新的评论&token=cce8653c794ac6f139ff5ae5dbcbb3c640f6779ac656ebb6dcf2943c0d8faa7c");
-        console.log(a);
-        a.fail(function(datcard){
-            console.log(a);
-        });
-        a.success((dat)=>{
-            console.log(dat);
-        })
-    })
-    //
-    //console.log(a);
 </script>
