@@ -6,7 +6,7 @@
         expiration: "never",
         type: "redirect",
         name: "tester",
-        scope: { read: true},
+        scope: { read: true, write: true},
         redirect_url: "https://kenese-party.github.io",
         success() {
             console.log(Trello.token(),Trello.authorized())
