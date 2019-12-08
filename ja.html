@@ -1,20 +1,21 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
 <script src="https://trello.com/1/client.js?key=ce77e6af1371cfb41f4a8e8840d76f4c"></script>
 <script>
-    window.Trello.authorize({
+    console.log(Trello.token(),Trello.authorized());
+    Trello.authorize({
         expiration: "never",
         type: "redirect",
         name: "tester",
         scope: { read: true, write: true, account: true},
         redirect_url: "https://kenese-party.github.io",
-        success(dat) {
-            console.log(dat)
+        success() {
+            console.log(Trello.token(),Trello.authorized())
         }
     })
-    var b = window.Trello.get("boards/zqJHbNrr/cards");
+    var b = Trello.get("boards/zqJHbNrr/cards");
     b.done(function(dat) {
         console.log(dat);
-        var a = window.Trello.post("cards/"+dat[0].id+"/actions/comments?text=一条自动生成的新的评论&token=cce8653c794ac6f139ff5ae5dbcbb3c640f6779ac656ebb6dcf2943c0d8faa7c");
+        var a = Trello.post("cards/"+dat[0].id+"/actions/comments?text=一条自动生成的新的评论&token=cce8653c794ac6f139ff5ae5dbcbb3c640f6779ac656ebb6dcf2943c0d8faa7c");
         a.fail(function(datcard){
             console.log(datcard);
         })
